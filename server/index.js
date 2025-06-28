@@ -52,5 +52,5 @@ io.on("connect", (socker)=>{
 );
 
 
-server.listen(process.env.PORT || 5000, ()=>console.log("server is running"));
+server.listen(process.env.PORT || 5000, '0.0.0.0', ()=>console.log("server is running"));
 
