@@ -1,14 +1,16 @@
 import http from "http";
-import { Socket } from "socket.io";
-import router from "./router.js";
-import {addUser, deleteUser, getUser, getUserinRoomLists} from "./user";
-const express = require('express');
+import { Server } from "socket.io";
+import {router} from "./router.js";
+import {addUser, deleteUser, getUser, getUserinRoomLists} from "./user.js";
+import express from 'express';
+import cors from 'cors';
 
-const cors =require("cors");
 const app = express();
 
 const server = http.createServer(app);
-const io = Socket.io(server);
+const io = new Server(server, {
+  cors: { origin: "*" }
+});
 
 app.use(cors);
 app.use(router);

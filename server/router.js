@@ -1,7 +1,8 @@
 import { response, Router } from "express";
+const router = Router();
 
-Router.get("/", (req, res) =>{
+router.get("/", (req, res) =>{
     res.send({response : "response status is running "}).status(200);
 });
 
-module.exports =Router;
+export {router};

@@ -34,4 +34,4 @@ const getUserinRoomLists = (room) =>{
 
 const getUser = (id) =>{ users.find((user) => user.id == id) };
 
-export default {addUser, deleteUser, getUser, getUserinRoomLists};
+export {addUser, deleteUser, getUser, getUserinRoomLists};
